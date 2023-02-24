@@ -2,7 +2,7 @@
 <p>Please type in list information</p>
 
 
-<%= simple_form_for [@list] do |f| %>
+<%= simple_form_for @list do |f| %>
   <%= f.input :name %>
   <%= f.submit "Create list", class: "btn btn-primary" %>
 <% end %>

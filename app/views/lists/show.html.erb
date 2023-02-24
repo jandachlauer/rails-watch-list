@@ -1,21 +1,21 @@
-<h1>List information</h1>
-<p>xxxxxxx</p>
-
+<h2>List information</h2>
 
   <h1><%= @list.name %></h1>
 
-
- <% @list.bookmarks.each do |bookmark|%>
- <%= bookmark.movie.title  %>
-
- <% end %>
-
- <h2>Add a movie to this list</h2>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-<%= f.input :comment %>
- <%= f.association :movie %>
- <%= f.submit "Add movie", class: "btn btn-primary" %>
- <% end %>
+ <%= link_to "Add a bookmark to this list", new_list_bookmark_path(@list) %> <br>
 
 
-<p>Add bookmark on this page...?</p>
+  <div class="flex-container">
+<% @bookmarks.each do |bookmark| %>
+<div class="movie-card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= bookmark.movie.poster_url %>);>
+    <%= bookmark.movie.title %> <br>
+    <%= bookmark.movie.rating %> <br>
+    <%# <%= bookmark.movie.overview %>s
+    <i> <%= bookmark.comment %> </i> <br>
+     <%= link_to "delete bookmark", list_bookmark_path(@list, bookmark), data: { turbo_method: :delete } %> <br>
+     </div>
+<% end %>
+</div>
+
+
+<%= link_to "Back to lists", lists_path(@list) %> <br>
