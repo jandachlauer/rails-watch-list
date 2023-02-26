@@ -23,13 +23,8 @@ class ListsController < ApplicationController
     end
   end
 
-
-  # def add_movie
-  #   @movies << @new_movie
-  # end
-
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 
 end

@@ -1,8 +1,10 @@
+<div class="note">
 <h1>Add a new list</h1>
 <p>Please type in list information</p>
-
+</div>
 
 <%= simple_form_for @list do |f| %>
   <%= f.input :name %>
+  <%= f.input :photo, as: :file%>
   <%= f.submit "Create list", class: "btn btn-primary" %>
 <% end %>

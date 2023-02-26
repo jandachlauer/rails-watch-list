@@ -1,0 +1,25 @@
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+  margin: 20px 0px;
+}
+
+.btn-flat:hover {
+  background: #4D04C4;
+  color: white;
+}
+
+
+
+.delete_link {
+  text-decoration: none;
+  font-size: 12px;
+  color: #670BFF;
+
+  &.hover {
+    color: #4D04C4;
+  }
+}
