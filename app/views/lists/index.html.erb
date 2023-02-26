@@ -13,7 +13,7 @@
 
  <div class="flex-container">
   <% @lists.each do |list| %>
-     <div class="card-list"  > <%= link_to list.name, list_path(list) %> </div>
+     <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>');"> <%= link_to list.name, list_path(list) %> </div>
 
   <% end %>
 

@@ -1,9 +1,13 @@
-
-<h1>New bookmark</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>');">
+  <div class="banner-content">
+    <h1><%= @list.name %></h1>
+    <p>Create a new bookmark here</p>
+  </div>
+</div>
 
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.association :movie, prompt: "Select a movie" %>
    <%= f.input :comment %>
-  <%= f.button :submit %>
+  <%= f.submit "Create bookmark", class: "btn btn-flat" %>
 <% end %>
